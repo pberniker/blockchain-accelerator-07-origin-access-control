@@ -1,5 +1,5 @@
 {
-	"id": "420ea98d657b8801ab1908a08c8ebea1",
+	"id": "a80e42543f76eaabd4376e5e22ab60b1",
 	"_format": "hh-sol-build-info-1",
 	"solcVersion": "0.8.24",
 	"solcLongVersion": "0.8.24+commit.e11b9ed9",
@@ -7,7 +7,7 @@
 		"language": "Solidity",
 		"sources": {
 			"Interfaces/IResult.sol": {
-				"content": "// SPDX-License-Identifier: GPL-3.0-only\n\npragma solidity 0.8.24;\n\ninterface IResult {\n    function setResult(uint result_) external;\n}"
+				"content": "// SPDX-License-Identifier: GPL-3.0-only\n\npragma solidity 0.8.24;\n\ninterface IResult {\n    function setResult(uint result_) external;\n    function setFee(uint fee_) external;\n}"
 			}
 		},
 		"settings": {
@@ -43,6 +43,19 @@
 			"Interfaces/IResult.sol": {
 				"IResult": {
 					"abi": [
+						{
+							"inputs": [
+								{
+									"internalType": "uint256",
+									"name": "fee_",
+									"type": "uint256"
+								}
+							],
+							"name": "setFee",
+							"outputs": [],
+							"stateMutability": "nonpayable",
+							"type": "function"
+						},
 						{
 							"inputs": [
 								{
@@ -84,10 +97,11 @@
 						"gasEstimates": null,
 						"legacyAssembly": null,
 						"methodIdentifiers": {
+							"setFee(uint256)": "69fe0e2d",
 							"setResult(uint256)": "812448a5"
 						}
 					},
-					"metadata": "{\"compiler\":{\"version\":\"0.8.24+commit.e11b9ed9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"result_\",\"type\":\"uint256\"}],\"name\":\"setResult\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"Interfaces/IResult.sol\":\"IResult\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"Interfaces/IResult.sol\":{\"keccak256\":\"0x901a042e269980e6e1e50e6c7c78bbab53e18c381303735396195bb3989528c5\",\"license\":\"GPL-3.0-only\",\"urls\":[\"bzz-raw://e770363ffc0b36aaedfc661ea56ade30cc4dfdb9dce82557a816707b142acec5\",\"dweb:/ipfs/QmQzT23KhGqbTfvWi4ewDyoyxvLGJiTmP94zyV6o3DPkVN\"]}},\"version\":1}",
+					"metadata": "{\"compiler\":{\"version\":\"0.8.24+commit.e11b9ed9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"fee_\",\"type\":\"uint256\"}],\"name\":\"setFee\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"result_\",\"type\":\"uint256\"}],\"name\":\"setResult\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"Interfaces/IResult.sol\":\"IResult\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"Interfaces/IResult.sol\":{\"keccak256\":\"0x8be21da9f5768cf3965588fafc93b9e67090e7b0c270111119ddb5c7412357ea\",\"license\":\"GPL-3.0-only\",\"urls\":[\"bzz-raw://2e2f37b311eff30ec67ba8784c7f79f3a7f35547614f932293fad06f720e1457\",\"dweb:/ipfs/QmRj4XU4B8FWFz6fKStmSaipXZYHmuAg9c5uGPgdsqZvnd\"]}},\"version\":1}",
 					"storageLayout": {
 						"storage": [],
 						"types": null
@@ -106,10 +120,10 @@
 					"absolutePath": "Interfaces/IResult.sol",
 					"exportedSymbols": {
 						"IResult": [
-							7
+							12
 						]
 					},
-					"id": 8,
+					"id": 13,
 					"license": "GPL-3.0-only",
 					"nodeType": "SourceUnit",
 					"nodes": [
@@ -130,9 +144,9 @@
 							"contractDependencies": [],
 							"contractKind": "interface",
 							"fullyImplemented": false,
-							"id": 7,
+							"id": 12,
 							"linearizedBaseContracts": [
-								7
+								12
 							],
 							"name": "IResult",
 							"nameLocation": "77:7:0",
@@ -187,20 +201,75 @@
 										"parameters": [],
 										"src": "132:0:0"
 									},
-									"scope": 7,
+									"scope": 12,
 									"src": "91:42:0",
+									"stateMutability": "nonpayable",
+									"virtual": false,
+									"visibility": "external"
+								},
+								{
+									"functionSelector": "69fe0e2d",
+									"id": 11,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "setFee",
+									"nameLocation": "147:6:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 9,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 8,
+												"mutability": "mutable",
+												"name": "fee_",
+												"nameLocation": "159:4:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 11,
+												"src": "154:9:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 7,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "154:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "153:11:0"
+									},
+									"returnParameters": {
+										"id": 10,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "173:0:0"
+									},
+									"scope": 12,
+									"src": "138:36:0",
 									"stateMutability": "nonpayable",
 									"virtual": false,
 									"visibility": "external"
 								}
 							],
-							"scope": 8,
-							"src": "67:68:0",
+							"scope": 13,
+							"src": "67:109:0",
 							"usedErrors": [],
 							"usedEvents": []
 						}
 					],
-					"src": "42:93:0"
+					"src": "42:134:0"
 				},
 				"id": 0
 			}

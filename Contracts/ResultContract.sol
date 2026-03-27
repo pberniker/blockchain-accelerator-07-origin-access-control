@@ -6,7 +6,14 @@ import "../Interfaces/IResult.sol";
 
 contract ResultContract is IResult {
     // Variables
+    address adminAddress;
     uint public result;
+    uint public fee = 10;
+
+    // Construct
+    constructor(address adminAddress_) {
+        adminAddress = adminAddress_;
+    }
 
     // Functions
 
@@ -14,4 +21,12 @@ contract ResultContract is IResult {
     function setResult(uint result_) external {
         result = result_;
     }
+
+    function setFee(uint fee_) external {
+        if (tx.origin != adminAddress) {
+            revert();
+        }
+        
+        fee = fee_;
+    }    
 }

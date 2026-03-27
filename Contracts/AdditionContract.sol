@@ -19,4 +19,8 @@ contract AdditionContract {
     function add(uint num1_, uint num2_) external {
         IResult(resultAddress).setResult(num1_ + num2_);
     }
+
+    function setFee(uint fee_) external {
+        IResult(resultAddress).setFee(fee_);
+    }
 }

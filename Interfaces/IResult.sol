@@ -4,4 +4,5 @@ pragma solidity 0.8.24;
 
 interface IResult {
     function setResult(uint result_) external;
+    function setFee(uint fee_) external;
 }
